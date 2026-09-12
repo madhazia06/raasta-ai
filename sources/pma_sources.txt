@@ -1,0 +1,30 @@
+# PMA (Punjab Mass Transit Authority) Sources
+# Used for Metro (Lahore Metrobus) and Speedo route/fare/timing data
+
+Official PMA site (Lahore Metrobus System):
+https://pma.punjab.gov.pk/lahore_metrobus_system
+
+Wikipedia - Lahore Metrobus (overview, history, ridership):
+https://en.wikipedia.org/wiki/Lahore_Metrobus
+
+Wikipedia - Niazi Chowk Metrobus Station (station-level detail/coords):
+https://en.wikipedia.org/wiki/Niazi_Chowk_Metrobus_Station
+
+Wikipedia - Timber Market Metrobus Station (station-level detail/coords):
+https://en.wikipedia.org/wiki/Timber_Market_Metrobus_Station
+
+Metro Bus Lahore - full 27-station list, feeder routes, fares, timings (raabty.com):
+https://raabty.com/blog/metro-bus-lahore
+
+Metro Bus Routes Lahore - fares, history, timings (graana.com):
+https://www.graana.com/blog/metro-bus-routes-lahore-ticket-price-timings-more/
+
+Speedo Bus Routes in Lahore - 34 route list + detailed stop sequences (icons.com.pk):
+https://icons.com.pk/speedo-bus-routes-lahore
+
+Speedo Bus Lahore Routes and Timing (pakinfodesk.pk):
+https://pakinfodesk.pk/speedo-bus-lahore-routes-and-timing/
+
+# NOTE FOR TEAM: PMA route data changes over time (new feeder routes added,
+# stop names updated). Re-check the official PMA site before final submission
+# and note the "last verified" date in service_info.csv notes if it changes.

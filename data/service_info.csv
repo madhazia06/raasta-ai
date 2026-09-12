@@ -1,0 +1,4 @@
+bus_type,official_name,operator,launched,vehicle_type,helpline,website,notes
+Metro,Lahore Metrobus,"Punjab Mass Transit Authority (PMA), Govt. of Punjab",11 February 2013,Air-conditioned BRT bus,042-111-222-627,pma.punjab.gov.pk,"Dedicated BRT corridor, Shahdara to Gajju Matta, 27 stations"
+Speedo,Speedo Bus Service,"Punjab Mass Transit Authority (PMA), Govt. of Punjab",Feeder network (ongoing expansion),Standard bus / Mini bus,042-111-222-627,pma.punjab.gov.pk,Feeder routes connecting neighborhoods to Metrobus corridor; 30+ routes
+Electro,Electro (Punjab Electric Bus Service),"Transport Department, Govt. of Punjab",19 February 2025,Fully electric bus (30 seats/80 capacity),N/A (see Punjab Transport Dept.),smu.punjab.gov.pk,"GPS tracking, WiFi, USB ports, ramps; expanding fleet & routes across Punjab"

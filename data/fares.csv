@@ -1,0 +1,4 @@
+bus_type,fare_type,min_fare_pkr,max_fare_pkr,student_senior_fare_pkr,payment_methods,notes
+Metro,Flat (token/card),30,30,15,Token|Metro Card,Token valid 1h15m; Metro Card valid 1h; Metro Card also usable on Speedo feeders
+Speedo,Distance-based,20,80,,Rechargeable smart card,Feeder network integrated with Lahore Metrobus
+Electro,Flat,20,20,0,Cash|Digital wallet/card (planned),"Free for students, senior citizens, and persons with disabilities"

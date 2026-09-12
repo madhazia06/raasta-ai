@@ -1,0 +1,40 @@
+transfer_id,stop_id,stop_name,routes_available,num_routes,cross_system_transfer,bus_types
+T0012,ST0028,Railway Station,M-FR-1|M-FR-3|S-1|S-16|S-17|S-25|S-3|S-9,8,Yes,Metro|Speedo
+T0013,ST0029,Bhatti Chowk,M-FR-1|M-FR-2|S-1|S-16|S-18|S-19|S-2|S-5,8,Yes,Metro|Speedo
+T0019,ST0039,R.A. Bazar,M-FR-9|S-12|S-14|S-25|S-26|S-4,6,Yes,Metro|Speedo
+T0010,ST0021,Chungi Amar Sidhu,M-FR-4|M-MAIN|S-14|S-4|S-7,5,Yes,Metro|Speedo
+T0015,ST0033,Babu Sabu,M-FR-5|M-FR-8|S-11|S-15|S-6,5,Yes,Metro|Speedo
+T0003,ST0010,Qartaba Chowk,M-FR-7|M-MAIN|S-10|S-15,4,Yes,Metro|Speedo
+T0009,ST0020,Ghazi Chowk,M-MAIN|S-13|S-14|S-24,4,Yes,Metro|Speedo
+T0020,ST0040,Thokar Niaz Baig,M-FR-10|S-21|S-22|S-23,4,Yes,Metro|Speedo
+T0028,ST0097,Shimla Pahari,E-1|S-17|S-18|S-32,4,Yes,Electro|Speedo
+T0034,ST0130,Daroghawala,S-26|S-27|S-30|S-31,4,No,Speedo
+T0002,ST0007,Civil Secretariat,M-FR-9|M-MAIN|S-12,3,Yes,Metro|Speedo
+T0005,ST0013,Canal,M-MAIN|S-17|S-8,3,Yes,Metro|Speedo
+T0006,ST0015,Kalma Chowk,M-MAIN|S-11|S-13,3,Yes,Metro|Speedo
+T0018,ST0037,Multan Chungi,M-FR-7|S-10|S-24,3,Yes,Metro|Speedo
+T0021,ST0042,Ek Moriya,S-1|S-16|S-32,3,No,Speedo
+T0037,ST0143,Cooper Store,S-31|S-32|S-33,3,No,Speedo
+T0001,ST0004,Azadi Chowk,M-MAIN|S-1,2,Yes,Metro|Speedo
+T0004,ST0011,Shama,E-1|M-MAIN,2,Yes,Electro|Metro
+T0007,ST0016,Model Town,M-MAIN|S-13,2,Yes,Metro|Speedo
+T0008,ST0018,Ittefaq Hospital,M-MAIN|S-13,2,Yes,Metro|Speedo
+T0011,ST0027,Gajju Matta,M-FR-11|M-MAIN,2,No,Metro
+T0014,ST0030,Samanabad Morr,M-FR-2|S-2,2,Yes,Metro|Speedo
+T0016,ST0034,Raj Garh Chowk,M-FR-5|S-6,2,Yes,Metro|Speedo
+T0017,ST0035,Canal Road,M-FR-10|M-FR-6,2,No,Metro
+T0022,ST0045,Lari Adda,S-1|S-31,2,No,Speedo
+T0023,ST0055,Chowk Yateem Khana,S-11|S-20,2,No,Speedo
+T0024,ST0073,Lahore Zoo,E-1|S-12,2,Yes,Electro|Speedo
+T0025,ST0077,Bagrian,S-13|S-7,2,No,Speedo
+T0026,ST0081,Pindi Stop,E-1|S-13,2,Yes,Electro|Speedo
+T0027,ST0094,Circular Road,S-16|S-18,2,No,Speedo
+T0029,ST0098,Haji Camp,E-1|S-17,2,Yes,Electro|Speedo
+T0030,ST0110,Depot Chowk,S-21|S-22,2,No,Speedo
+T0031,ST0111,Madar-e-Millat Road,S-21|S-22,2,No,Speedo
+T0032,ST0126,G.T. Road,S-26|S-30,2,No,Speedo
+T0033,ST0127,Shalimar Link Road,S-26|S-30,2,No,Speedo
+T0035,ST0136,Airport,S-28|S-30,2,No,Speedo
+T0036,ST0142,Chamra Mandi,S-31|S-32,2,No,Speedo
+T0038,ST0151,Mughalpura,S-33|S-34,2,No,Speedo
+T0039,ST0188,Jinnah Terminal (Thokar Niaz Baig),E-2|E-3,2,No,Electro

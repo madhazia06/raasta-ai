@@ -1,0 +1,4 @@
+bus_type,first_bus,last_bus,frequency_peak_min,frequency_offpeak_min,days_of_operation
+Metro,06:15,22:00,2-3,5-10,Daily (incl. Sundays & holidays)
+Speedo,06:00,22:00,5-10,10-15,Daily (incl. holidays)
+Electro,06:00,22:00,10-15,15-20,Daily

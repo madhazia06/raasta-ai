@@ -1,0 +1,215 @@
+stop_id,stop_name,city,served_by,num_routes,latitude,longitude,verification_status,geocode_method
+ST0001,Shahdara Metro Bus Station,Lahore,Metro,1,31.6009833,74.2992288,VERIFIED,nearest_neighbor_only
+ST0002,Niazi Chowk,Lahore,Metro|Speedo,2,31.6009833,74.2992288,VERIFIED,original_pass
+ST0003,Timber Market,Lahore,Metro|Speedo,2,31.5990964,74.3009152,VERIFIED,original_pass
+ST0004,Azadi Chowk,Lahore,Metro|Speedo,4,31.5891583,74.3067499,VERIFIED,original_pass
+ST0005,Bhatti Chowk,Lahore,Metro|Speedo,7,31.5806534,74.3062506,VERIFIED,original_pass
+ST0006,Katcheri,Lahore,Metro,1,31.574768,74.305316,VERIFIED,interpolated_between_neighbors
+ST0007,Civil Secretariat,Lahore,Metro|Speedo,2,31.5688829,74.3043810,VERIFIED,original_pass
+ST0008,MAO College,Lahore,Metro,1,31.5625191,74.3029137,VERIFIED,original_pass
+ST0009,Janaza Gah,Lahore,Metro,1,31.5760249,73.4783212,VERIFIED,original_pass
+ST0010,Qartaba Chowk,Lahore,Metro|Speedo,4,31.5487313,74.3150933,VERIFIED,bbox_with_city_name
+ST0011,Shama,Lahore,Electro|Metro|Speedo,3,31.5399880,74.3192840,VERIFIED,original_pass
+ST0012,Ichhra,Lahore,Metro,1,31.5297476,74.3132286,VERIFIED,original_pass
+ST0013,Canal,Lahore,Metro|Speedo,4,31.5195279,74.3266796,VERIFIED,original_pass
+ST0014,Gaddafi Stadium,Lahore,Metro,1,31.5133615,74.3334644,VERIFIED,original_pass
+ST0015,Kalma Chowk,Lahore,Metro|Speedo,4,31.5043561,74.3314138,VERIFIED,original_pass
+ST0016,Model Town,Lahore,Metro|Speedo,2,31.4918690,74.3142263,VERIFIED,original_pass
+ST0017,Naseerabad,Lahore,Metro,1,31.4870637,74.3387352,VERIFIED,original_pass
+ST0018,Ittefaq Hospital,Lahore,Metro|Speedo,2,31.4756654,74.3375093,VERIFIED,original_pass
+ST0019,Qainchi,Lahore,Metro|Speedo,3,31.4643674,74.3482141,VERIFIED,original_pass
+ST0020,Ghazi Chowk,Lahore,Metro|Speedo,6,31.4570510,74.3512050,VERIFIED,original_pass
+ST0021,Chungi Amar Sidhu,Lahore,Metro|Speedo,4,31.4503610,74.3533364,VERIFIED,original_pass
+ST0022,Kamahan,Lahore,Metro,1,31.4409127,74.3552743,VERIFIED,original_pass
+ST0023,Attari Saroba,Lahore,Metro,1,31.432079,74.356576,VERIFIED,interpolated_between_neighbors
+ST0024,Nishtar Metro Station,Lahore,Metro,1,31.423245,74.357878,VERIFIED,interpolated_between_neighbors
+ST0025,Youhannabad,Lahore,Metro,1,31.414411,74.359179,VERIFIED,interpolated_between_neighbors
+ST0026,Dulu Khurd,Lahore,Metro,1,31.4055772,74.3604808,VERIFIED,original_pass
+ST0027,Gajju Matta,Lahore,Metro,1,31.4055772,74.3604808,VERIFIED,nearest_neighbor_only
+ST0028,Railway Station,Lahore,Speedo,6,31.5722982,74.3361528,VERIFIED,original_pass
+ST0029,Ek Moriya,Lahore,Speedo,4,31.573085,74.332895,VERIFIED,interpolated_between_neighbors
+ST0030,Nawaz Sharif Hospital,Lahore,Speedo,2,31.5738727,74.3296374,VERIFIED,original_pass
+ST0031,Kashmiri Gate,Lahore,Speedo,2,31.5868419,74.3210436,VERIFIED,original_pass
+ST0032,Lari Adda,Lahore,Speedo,3,31.5960038,74.3148795,VERIFIED,original_pass
+ST0033,Texali Chowk,Lahore,Speedo,2,31.584906,74.306500,VERIFIED,interpolated_between_neighbors
+ST0034,Samanabad Morr,Lahore,Speedo,2,31.5443047,74.2946408,VERIFIED,original_pass
+ST0035,Corporation Chowk,Lahore,Speedo,1,31.5645648,74.3332304,VERIFIED,original_pass
+ST0036,Taj Company,Lahore,Speedo,1,31.5720041,74.2846889,VERIFIED,original_pass
+ST0037,Sanda,Lahore,Speedo,1,31.5582420,74.2884446,VERIFIED,original_pass
+ST0038,Double Sarkan,Lahore,Speedo,1,31.516677,74.296670,VERIFIED,interpolated_between_neighbors
+ST0039,Moon Market,Lahore,Speedo,1,31.4751113,74.3048962,VERIFIED,original_pass
+ST0040,Ganda Nala,Lahore,Speedo,1,31.5841133,74.3362688,VERIFIED,original_pass
+ST0041,Shahdara Metro Station,Lahore,Speedo,1,31.6009833,74.2992288,VERIFIED,nearest_neighbor_only
+ST0042,Shahdara Lari Adda,Lahore,Speedo,1,31.6009833,74.2992288,VERIFIED,nearest_neighbor_only
+ST0043,R.A. Bazar,Lahore,Speedo,5,31.5000864,74.3833725,VERIFIED,original_pass
+ST0044,Nadeem Chowk,Lahore,Speedo,1,31.5310251,74.3009579,VERIFIED,bbox_bounded_search
+ST0045,Defence Morr,Lahore,Speedo,1,31.4715878,74.3816205,VERIFIED,stripped_suffix_bounded
+ST0046,Shareef Market,Lahore,Speedo,1,31.479464,74.371669,VERIFIED,interpolated_between_neighbors
+ST0047,Walton,Lahore,Speedo,1,31.4873402,74.3617170,VERIFIED,original_pass
+ST0048,Shadbagh Underpass,Lahore,Speedo,1,31.5930014,74.3066494,VERIFIED,nearest_neighbor_only
+ST0049,Rajput Park,Lahore,Speedo,1,31.5930014,74.3066494,VERIFIED,original_pass
+ST0050,Madina Chowk,Lahore,Speedo,1,31.4925634,74.4088492,VERIFIED,original_pass
+ST0051,Lohay Wali Pulley,Lahore,Speedo,1,31.544296,74.363018,VERIFIED,interpolated_between_neighbors
+ST0052,Badami Bagh,Lahore,Speedo,1,31.5960294,74.3171869,VERIFIED,original_pass
+ST0053,Lari Adda Gol Chakar,Lahore,Speedo,1,31.592594,74.311968,VERIFIED,interpolated_between_neighbors
+ST0054,Babu Sabu,Lahore,Speedo,3,31.5400796,74.2679345,VERIFIED,original_pass
+ST0055,Niazi Adda,Lahore,Speedo,2,31.566587,74.292691,VERIFIED,interpolated_between_neighbors
+ST0056,City Bus Stand,Lahore,Speedo,2,31.5930941,74.3174468,VERIFIED,bbox_bounded_search
+ST0057,Chowk Yateem Khana,Lahore,Speedo,3,31.5319327,74.2872522,VERIFIED,original_pass
+ST0058,Bhala Stop,Lahore,Speedo,1,31.0856534,74.4058566,VERIFIED,stripped_suffix_with_city
+ST0059,Chauburji,Lahore,Speedo,2,31.5539332,74.3045935,VERIFIED,original_pass
+ST0060,Riwaz Garden,Lahore,Speedo,1,31.5592987,74.3019870,VERIFIED,original_pass
+ST0061,M.A.O College,Lahore,Speedo,1,31.557539,74.302789,VERIFIED,interpolated_between_neighbors
+ST0062,Firdous Cinema,Lahore,Speedo,1,31.555779,74.303591,VERIFIED,interpolated_between_neighbors
+ST0063,Raj Garh Chowk,Lahore,Speedo,1,31.5540198,74.3043938,VERIFIED,bbox_bounded_search
+ST0064,Bagrian,Lahore,Speedo,2,31.4273345,74.2988450,VERIFIED,original_pass
+ST0065,Depot Chowk,Lahore,Speedo,3,31.4938631,74.4061970,VERIFIED,original_pass
+ST0066,Minhaj University,Lahore,Electro|Speedo,2,31.4479815,74.3131690,VERIFIED,original_pass
+ST0067,Hamdard Chowk,Lahore,Electro|Speedo,2,31.4470395,74.3204326,VERIFIED,original_pass
+ST0068,Rehmat Eye Hospital,Lahore,Speedo,1,31.535592,74.310288,VERIFIED,interpolated_between_neighbors
+ST0069,Pindi Stop,Lahore,Electro|Speedo,3,31.6241454,74.3001429,VERIFIED,stripped_suffix_bounded
+ST0070,Peco Morr,Lahore,Speedo,2,31.4501832,74.3303559,VERIFIED,stripped_suffix_bounded
+ST0071,Kot Lakhpat Railway Station,Lahore,Speedo,1,31.4596096,74.3385474,VERIFIED,original_pass
+ST0072,Phatak Mandi,Lahore,Speedo,2,31.461989,74.343381,VERIFIED,interpolated_between_neighbors
+ST0073,Doctor Hospital,Lahore,Speedo,1,31.4817346,74.2907734,VERIFIED,nearest_neighbor_only
+ST0074,Wafaqi Colony,Lahore,Speedo,1,31.4817346,74.2907734,VERIFIED,original_pass
+ST0075,IBA Stop,Lahore,Electro|Speedo,2,31.4929912,74.2998080,VERIFIED,stripped_suffix_bounded
+ST0076,Hailey College,Lahore,Electro|Speedo,2,31.5617117,74.3074835,VERIFIED,original_pass
+ST0077,Campus Pull,Lahore,Speedo,2,31.530573,74.314260,VERIFIED,interpolated_between_neighbors
+ST0078,Barkat Market,Lahore,Speedo,2,31.4994344,74.3210367,VERIFIED,original_pass
+ST0079,Qaddafi Stadium,Lahore,Speedo,1,31.5140977,74.3307304,VERIFIED,original_pass
+ST0080,Haji Camp,Lahore,Electro|Speedo,3,31.5711430,74.3343889,VERIFIED,original_pass
+ST0081,Shimla Pahari,Lahore,Electro|Speedo,5,31.5621217,74.3365138,VERIFIED,original_pass
+ST0082,Lahore Zoo,Lahore,Electro|Speedo,3,31.5566887,74.3255367,VERIFIED,original_pass
+ST0083,Chairing Cross,Lahore,Speedo,2,31.561177,74.319485,VERIFIED,interpolated_between_neighbors
+ST0084,Ganga Ram Hospital,Lahore,Electro|Speedo,2,31.554954,74.317289,VERIFIED,interpolated_between_neighbors
+ST0085,Sham Nagar,Lahore,Speedo,1,31.5539332,74.3045935,VERIFIED,nearest_neighbor_only
+ST0086,Multan Chungi,Lahore,Speedo,2,31.4960667,74.2637013,VERIFIED,original_pass
+ST0087,Mustafa Town,Lahore,Speedo,1,31.4968660,74.2731139,VERIFIED,original_pass
+ST0088,Karim Block Market,Lahore,Speedo,1,31.500892,74.283718,VERIFIED,interpolated_between_neighbors
+ST0089,PU Examination Center,Lahore,Speedo,1,31.5049188,74.2943218,VERIFIED,bbox_bounded_search
+ST0090,Bhekewal Morr,Lahore,Speedo,2,31.5097118,74.3013411,VERIFIED,original_pass
+ST0091,Wahdat Colony,Lahore,Speedo,1,31.5164952,74.3074451,VERIFIED,original_pass
+ST0092,Naqsha Stop,Lahore,Speedo,1,31.5172526,74.3162360,VERIFIED,original_pass
+ST0093,Ichra,Lahore,Electro|Speedo,2,31.5332460,74.3160675,VERIFIED,original_pass
+ST0094,Scheme Morr,Lahore,Speedo,1,31.5256409,74.2836574,VERIFIED,original_pass
+ST0095,Flat Stop,Lahore,Speedo,1,31.5009512,74.3183917,VERIFIED,stripped_suffix_bounded
+ST0096,Dubai Chowk,Lahore,Speedo,1,31.505332,74.309866,VERIFIED,interpolated_between_neighbors
+ST0097,Sheikh Zaid Hospital,Lahore,Speedo,1,31.520142,74.307801,VERIFIED,interpolated_between_neighbors
+ST0098,Liberty Chowk,Lahore,Speedo,1,31.5100178,74.3406101,VERIFIED,original_pass
+ST0099,Hafeez Center,Lahore,Speedo,1,31.5158669,74.3410061,VERIFIED,original_pass
+ST0100,Mini Market,Lahore,Speedo,1,31.5209101,74.3513562,VERIFIED,original_pass
+ST0101,Main Market Gulberg,Lahore,Speedo,1,31.5242296,74.3461065,VERIFIED,original_pass
+ST0102,PAF Market,Lahore,Speedo,1,31.5196105,74.3817950,VERIFIED,original_pass
+ST0103,Girja Chowk,Lahore,Speedo,1,31.5221746,74.3790477,VERIFIED,original_pass
+ST0104,Afshan Chowk,Lahore,Speedo,1,31.526979,74.372556,VERIFIED,interpolated_between_neighbors
+ST0105,Fortress Stadium,Lahore,Speedo,1,31.5317842,74.3660636,VERIFIED,original_pass
+ST0106,Gymkhana,Lahore,Speedo,1,31.5351392,74.3546905,VERIFIED,original_pass
+ST0107,Aitchison College,Lahore,Speedo,1,31.5503772,74.3467084,VERIFIED,original_pass
+ST0108,PC Hotel,Lahore,Speedo,1,31.5047769,74.3027019,VERIFIED,original_pass
+ST0109,GPO,Lahore,Speedo,1,31.5656648,74.3134333,VERIFIED,original_pass
+ST0110,Anarkali,Lahore,Speedo,1,31.5624800,74.3093567,VERIFIED,original_pass
+ST0111,UMT Stop,Lahore,Speedo,1,31.4519482,74.2932461,VERIFIED,stripped_suffix_bounded
+ST0112,Khokhar Chowk,Lahore,Speedo,1,31.4697282,74.2729324,VERIFIED,original_pass
+ST0113,Akbar Chowk,Lahore,Electro|Speedo,2,31.4676215,74.3069107,VERIFIED,original_pass
+ST0114,Fauji Foundation,Lahore,Speedo,1,31.5001040,74.3949245,VERIFIED,original_pass
+ST0115,Ali View Garden,Lahore,Speedo,1,31.4947637,74.4030953,VERIFIED,original_pass
+ST0116,Bhatta Chowk,Lahore,Speedo,1,31.4875210,74.4120820,VERIFIED,original_pass
+ST0117,DHA Nursery,Lahore,Speedo,1,31.500653,74.344921,VERIFIED,interpolated_between_neighbors
+ST0118,LESCO,Lahore,Speedo,1,31.5137853,74.2777605,VERIFIED,original_pass
+ST0119,Chota Ishara Stop,Lahore,Speedo,1,31.488413,74.321767,VERIFIED,interpolated_between_neighbors
+ST0120,Naka Stop,Lahore,Speedo,1,31.4630416,74.3657727,VERIFIED,stripped_suffix_bounded
+ST0121,Hakeem M. Ajmal Khan Road,Lahore,Speedo,1,31.546651,74.291067,VERIFIED,interpolated_between_neighbors
+ST0122,Gulshan Ravi Road,Lahore,Speedo,1,31.5445700,74.2670416,VERIFIED,original_pass
+ST0123,Kacha Ferozepur Road,Lahore,Speedo,1,31.5469703,74.2948505,VERIFIED,original_pass
+ST0124,Circular Road,Lahore,Speedo,2,31.5881752,74.3198281,VERIFIED,original_pass
+ST0125,Main Boulevard Shadman,Lahore,Speedo,1,31.5188285,74.3451816,VERIFIED,original_pass
+ST0126,Davis Road,Lahore,Speedo,1,31.5564771,74.3397187,VERIFIED,original_pass
+ST0127,Nisbat Road,Lahore,Speedo,1,31.5838921,74.3426800,VERIFIED,original_pass
+ST0128,Abbot Road,Lahore,Speedo,1,31.573007,74.339597,VERIFIED,interpolated_between_neighbors
+ST0129,Main Market,Lahore,Speedo,1,31.5242430,74.3460723,VERIFIED,original_pass
+ST0130,Jail Road,Lahore,Speedo,1,31.5366787,74.3394136,VERIFIED,original_pass
+ST0131,Lytton Road,Lahore,Speedo,1,31.5543775,74.3111000,VERIFIED,original_pass
+ST0132,Crust Road,Lahore,Speedo,1,31.565204,74.307766,VERIFIED,interpolated_between_neighbors
+ST0133,Lower Mall Road,Lahore,Speedo,1,31.5760299,74.3044321,VERIFIED,original_pass
+ST0134,Jain Mandar,Lahore,Speedo,1,31.5306221,74.2963392,VERIFIED,nearest_neighbor_only
+ST0135,Al-Mumtaz Road,Lahore,Speedo,1,31.5306221,74.2963392,VERIFIED,original_pass
+ST0136,Poonch Road,Lahore,Speedo,1,31.5436498,74.3017473,VERIFIED,original_pass
+ST0137,Lake Road,Lahore,Speedo,1,31.5582384,74.3067483,VERIFIED,original_pass
+ST0138,Madar-e-Millat Road,Lahore,Speedo,2,31.4315851,74.3024085,VERIFIED,original_pass
+ST0139,Ali Road,Lahore,Speedo,1,31.4496437,74.3141945,VERIFIED,original_pass
+ST0140,Baig Road,Lahore,Speedo,1,31.4564302,74.2830176,VERIFIED,original_pass
+ST0141,Canal Bank Road,Lahore,Speedo,1,31.5618262,74.3792288,VERIFIED,original_pass
+ST0142,Thokar Niaz Baig,Lahore,Speedo,3,31.4810169,74.2382381,VERIFIED,original_pass
+ST0143,Sutlej Avenue,Lahore,Speedo,1,31.4368906,74.2905554,VERIFIED,original_pass
+ST0144,Shahrah Nazaria-e-Pakistan Avenue,Lahore,Speedo,1,31.458954,74.264397,VERIFIED,interpolated_between_neighbors
+ST0145,Valencia,Lahore,Speedo,1,31.4066733,74.2582688,VERIFIED,original_pass
+ST0146,Valencia Main Boulevard,Lahore,Speedo,1,31.3993852,74.2829551,VERIFIED,original_pass
+ST0147,Khayaban-e-Jinnah,Lahore,Speedo,1,31.4665969,74.4298060,VERIFIED,original_pass
+ST0148,Raiwind Road,Lahore,Speedo,1,31.4392555,74.2319337,VERIFIED,original_pass
+ST0149,College Road,Lahore,Speedo,1,31.4399551,74.2925408,VERIFIED,original_pass
+ST0150,Maulana Shaukat Ali Road,Lahore,Speedo,1,31.4720376,74.3029939,VERIFIED,original_pass
+ST0151,Wahdat Road,Lahore,Speedo,1,31.4966845,74.2667125,VERIFIED,original_pass
+ST0152,Lahore-Bedian Road,Lahore,Speedo,1,31.4851902,74.4175681,VERIFIED,original_pass
+ST0153,Allama Iqbal Road,Lahore,Speedo,1,31.5812751,74.3321447,VERIFIED,original_pass
+ST0154,G.T. Road,Lahore,Speedo,2,31.5967720,74.3138620,VERIFIED,original_pass
+ST0155,Shalimar Link Road,Lahore,Speedo,2,31.5752013,74.3811753,VERIFIED,original_pass
+ST0156,Tufail Road,Lahore,Speedo,1,31.4937339,74.2552971,VERIFIED,original_pass
+ST0157,Sarfraz Rafique Road,Lahore,Speedo,1,31.540494,74.329919,VERIFIED,interpolated_between_neighbors
+ST0158,Daroghawala,Lahore,Speedo,4,31.5872535,74.4045413,VERIFIED,original_pass
+ST0159,BataPur,Lahore,Speedo,1,31.5964964,74.4913891,VERIFIED,original_pass
+ST0160,GT Road,Lahore,Speedo,1,31.6088041,74.3031637,VERIFIED,original_pass
+ST0161,Quaid-e-Azam Interchange,Lahore,Speedo,1,31.5796997,74.2913081,VERIFIED,stripped_suffix_bounded
+ST0162,Harbanspura Road,Lahore,Speedo,1,31.5690248,74.4365533,VERIFIED,original_pass
+ST0163,Zarar Shaheed Road,Lahore,Speedo,1,31.5487189,74.4045878,VERIFIED,original_pass
+ST0164,Airport,Lahore,Speedo,2,31.5315331,74.4247837,VERIFIED,original_pass
+ST0165,Niazi Interchange,Lahore,Speedo,1,31.5299190,74.4628661,VERIFIED,stripped_suffix_bounded
+ST0166,Lahore Ring Road,Lahore,Speedo,1,31.6104764,74.4232641,VERIFIED,original_pass
+ST0167,Band Road,Lahore,Speedo,1,31.5485131,74.2679361,VERIFIED,original_pass
+ST0168,Sue Wala Road,Lahore,Speedo,1,31.5823454,74.3943533,VERIFIED,original_pass
+ST0169,Salamat Pura,Lahore,Speedo,1,31.5829717,74.3866516,VERIFIED,original_pass
+ST0170,Chamra Mandi,Lahore,Speedo,2,31.5809589,74.3372181,VERIFIED,original_pass
+ST0171,Cooper Store,Lahore,Speedo,3,31.493848,74.303643,VERIFIED,interpolated_between_neighbors
+ST0172,UET,Lahore,Speedo,1,31.4067365,74.2700682,VERIFIED,original_pass
+ST0173,Shalimar Chowk,Lahore,Speedo,1,31.5645648,74.3332304,VERIFIED,original_pass
+ST0174,Durand Road,Lahore,Speedo,1,31.5618302,74.3369642,VERIFIED,original_pass
+ST0175,Queen Mary Road,Lahore,Speedo,1,31.5632838,74.3407695,VERIFIED,original_pass
+ST0176,Garhi Shahu Bridge,Lahore,Speedo,1,31.5702387,74.3481851,VERIFIED,original_pass
+ST0177,Workshop Road,Lahore,Speedo,1,31.5660114,74.3695991,VERIFIED,original_pass
+ST0178,Mughalpura Road,Lahore,Speedo,1,31.5650089,74.3530829,VERIFIED,original_pass
+ST0179,Mughalpura,Lahore,Speedo,2,31.5648672,74.3786096,VERIFIED,original_pass
+ST0180,Singhpura,Lahore,Speedo,1,31.5788425,74.3751340,VERIFIED,original_pass
+ST0181,Wheatman Road,Lahore,Speedo,1,31.5728017,74.3676493,VERIFIED,original_pass
+ST0182,Griffin Road,Lahore,Speedo,1,31.5626398,74.3772056,VERIFIED,original_pass
+ST0183,Lahore Railway Station,Lahore,Electro,1,31.5305468,74.3611247,VERIFIED,original_pass
+ST0184,Police Lines,Lahore,Electro,1,31.5680465,74.3327538,VERIFIED,original_pass
+ST0185,Roznama Jang,Lahore,Electro,1,31.538853,74.363365,VERIFIED,interpolated_between_neighbors
+ST0186,Muslim League House,Lahore,Electro,1,31.515584,74.390216,VERIFIED,interpolated_between_neighbors
+ST0187,Club Chowk,Lahore,Electro,1,31.4923160,74.4170670,VERIFIED,original_pass
+ST0188,Governor House,Lahore,Electro,1,31.5568710,74.3354949,VERIFIED,original_pass
+ST0189,Bagh-e-Jinnah,Lahore,Electro,1,31.5523964,74.3288503,VERIFIED,original_pass
+ST0190,Charing Cross,Lahore,Electro,1,31.5595887,74.3245067,VERIFIED,original_pass
+ST0191,Waris Road,Lahore,Electro,1,31.5486219,74.3198366,VERIFIED,original_pass
+ST0192,Abid Market,Lahore,Electro,1,31.5507580,74.3158212,VERIFIED,original_pass
+ST0193,Mozang,Lahore,Electro,1,31.5537450,74.3141492,VERIFIED,original_pass
+ST0194,Fazlia Colony,Lahore,Electro,1,31.5261827,74.3259144,VERIFIED,original_pass
+ST0195,Rehmanpura,Lahore,Electro,1,31.5227759,74.3188089,VERIFIED,original_pass
+ST0196,Ichra Bridge,Lahore,Electro,1,31.5331029,74.3174360,VERIFIED,stripped_suffix_bounded
+ST0197,Punjab College,Lahore,Electro,1,31.5811776,74.4790364,VERIFIED,original_pass
+ST0198,New Garden Town,Lahore,Electro,1,31.5009512,74.3183917,VERIFIED,original_pass
+ST0199,Campus Bridge,Lahore,Electro,1,31.5750266,74.3251623,VERIFIED,stripped_suffix_bounded
+ST0200,Punjab University Gate No. 4,Lahore,Electro,1,31.4975572,74.3096146,VERIFIED,original_pass
+ST0201,Shah Di Khoi,Lahore,Electro,1,31.542148,74.302997,VERIFIED,interpolated_between_neighbors
+ST0202,Ravi Chowk,Lahore,Electro,1,31.5913049,74.3061859,VERIFIED,bbox_bounded_search
+ST0203,Shook Chowk,Lahore,Electro,1,31.529463,74.306548,VERIFIED,interpolated_between_neighbors
+ST0204,Township Bazaar,Lahore,Electro,1,31.468082,74.310433,VERIFIED,interpolated_between_neighbors
+ST0205,Mochipora,Lahore,Electro,1,31.468542,74.313956,VERIFIED,interpolated_between_neighbors
+ST0206,Model Town Link Road,Lahore,Electro,1,31.4690030,74.3174781,VERIFIED,original_pass
+ST0207,Honda Morr,Lahore,Electro,1,31.5056289,74.3316634,VERIFIED,stripped_suffix_bounded
+ST0208,Government Employees Society,Lahore,Electro,1,31.4414804,74.2861415,VERIFIED,original_pass
+ST0209,Riphah University,Lahore,Electro,1,31.3780144,74.2318658,VERIFIED,original_pass
+ST0210,Nursery Stop,Lahore,Electro,1,31.4688366,74.4140965,VERIFIED,stripped_suffix_bounded
+ST0211,Green Town,Lahore,Electro,1,31.4320546,74.3074652,VERIFIED,original_pass
+ST0212,Raiwind,Lahore,Electro,1,31.2443583,74.2138126,PARTIAL,original_pass
+ST0213,Jinnah Terminal (Thokar Niaz Baig),Lahore,Electro,2,31.406692,74.325183,PARTIAL,interpolated_between_neighbors
+ST0214,Harbanspura,Lahore,Electro,1,31.5690248,74.4365533,PARTIAL,original_pass

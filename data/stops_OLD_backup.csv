@@ -1,0 +1,215 @@
+stop_id,stop_name,city,served_by,num_routes,latitude,longitude,verification_status
+ST0001,Shahdara Metro Bus Station,Lahore,Metro,1,,,VERIFIED
+ST0002,Niazi Chowk,Lahore,Metro|Speedo,2,,,VERIFIED
+ST0003,Timber Market,Lahore,Metro|Speedo,2,,,VERIFIED
+ST0004,Azadi Chowk,Lahore,Metro|Speedo,4,,,VERIFIED
+ST0005,Bhatti Chowk,Lahore,Metro|Speedo,7,,,VERIFIED
+ST0006,Katcheri,Lahore,Metro,1,,,VERIFIED
+ST0007,Civil Secretariat,Lahore,Metro|Speedo,2,,,VERIFIED
+ST0008,MAO College,Lahore,Metro,1,,,VERIFIED
+ST0009,Janaza Gah,Lahore,Metro,1,,,VERIFIED
+ST0010,Qartaba Chowk,Lahore,Metro|Speedo,4,,,VERIFIED
+ST0011,Shama,Lahore,Electro|Metro|Speedo,3,,,VERIFIED
+ST0012,Ichhra,Lahore,Metro,1,,,VERIFIED
+ST0013,Canal,Lahore,Metro|Speedo,4,,,VERIFIED
+ST0014,Gaddafi Stadium,Lahore,Metro,1,,,VERIFIED
+ST0015,Kalma Chowk,Lahore,Metro|Speedo,4,,,VERIFIED
+ST0016,Model Town,Lahore,Metro|Speedo,2,,,VERIFIED
+ST0017,Naseerabad,Lahore,Metro,1,,,VERIFIED
+ST0018,Ittefaq Hospital,Lahore,Metro|Speedo,2,,,VERIFIED
+ST0019,Qainchi,Lahore,Metro|Speedo,3,,,VERIFIED
+ST0020,Ghazi Chowk,Lahore,Metro|Speedo,6,,,VERIFIED
+ST0021,Chungi Amar Sidhu,Lahore,Metro|Speedo,4,,,VERIFIED
+ST0022,Kamahan,Lahore,Metro,1,,,VERIFIED
+ST0023,Attari Saroba,Lahore,Metro,1,,,VERIFIED
+ST0024,Nishtar Metro Station,Lahore,Metro,1,,,VERIFIED
+ST0025,Youhannabad,Lahore,Metro,1,,,VERIFIED
+ST0026,Dulu Khurd,Lahore,Metro,1,,,VERIFIED
+ST0027,Gajju Matta,Lahore,Metro,1,,,VERIFIED
+ST0028,Railway Station,Lahore,Speedo,6,,,VERIFIED
+ST0029,Ek Moriya,Lahore,Speedo,4,,,VERIFIED
+ST0030,Nawaz Sharif Hospital,Lahore,Speedo,2,,,VERIFIED
+ST0031,Kashmiri Gate,Lahore,Speedo,2,,,VERIFIED
+ST0032,Lari Adda,Lahore,Speedo,3,,,VERIFIED
+ST0033,Texali Chowk,Lahore,Speedo,2,,,VERIFIED
+ST0034,Samanabad Morr,Lahore,Speedo,2,,,VERIFIED
+ST0035,Corporation Chowk,Lahore,Speedo,1,,,VERIFIED
+ST0036,Taj Company,Lahore,Speedo,1,,,VERIFIED
+ST0037,Sanda,Lahore,Speedo,1,,,VERIFIED
+ST0038,Double Sarkan,Lahore,Speedo,1,,,VERIFIED
+ST0039,Moon Market,Lahore,Speedo,1,,,VERIFIED
+ST0040,Ganda Nala,Lahore,Speedo,1,,,VERIFIED
+ST0041,Shahdara Metro Station,Lahore,Speedo,1,,,VERIFIED
+ST0042,Shahdara Lari Adda,Lahore,Speedo,1,,,VERIFIED
+ST0043,R.A. Bazar,Lahore,Speedo,5,,,VERIFIED
+ST0044,Nadeem Chowk,Lahore,Speedo,1,,,VERIFIED
+ST0045,Defence Morr,Lahore,Speedo,1,,,VERIFIED
+ST0046,Shareef Market,Lahore,Speedo,1,,,VERIFIED
+ST0047,Walton,Lahore,Speedo,1,,,VERIFIED
+ST0048,Shadbagh Underpass,Lahore,Speedo,1,,,VERIFIED
+ST0049,Rajput Park,Lahore,Speedo,1,,,VERIFIED
+ST0050,Madina Chowk,Lahore,Speedo,1,,,VERIFIED
+ST0051,Lohay Wali Pulley,Lahore,Speedo,1,,,VERIFIED
+ST0052,Badami Bagh,Lahore,Speedo,1,,,VERIFIED
+ST0053,Lari Adda Gol Chakar,Lahore,Speedo,1,,,VERIFIED
+ST0054,Babu Sabu,Lahore,Speedo,3,,,VERIFIED
+ST0055,Niazi Adda,Lahore,Speedo,2,,,VERIFIED
+ST0056,City Bus Stand,Lahore,Speedo,2,,,VERIFIED
+ST0057,Chowk Yateem Khana,Lahore,Speedo,3,,,VERIFIED
+ST0058,Bhala Stop,Lahore,Speedo,1,,,VERIFIED
+ST0059,Chauburji,Lahore,Speedo,2,,,VERIFIED
+ST0060,Riwaz Garden,Lahore,Speedo,1,,,VERIFIED
+ST0061,M.A.O College,Lahore,Speedo,1,,,VERIFIED
+ST0062,Firdous Cinema,Lahore,Speedo,1,,,VERIFIED
+ST0063,Raj Garh Chowk,Lahore,Speedo,1,,,VERIFIED
+ST0064,Bagrian,Lahore,Speedo,2,,,VERIFIED
+ST0065,Depot Chowk,Lahore,Speedo,3,,,VERIFIED
+ST0066,Minhaj University,Lahore,Electro|Speedo,2,,,VERIFIED
+ST0067,Hamdard Chowk,Lahore,Electro|Speedo,2,,,VERIFIED
+ST0068,Rehmat Eye Hospital,Lahore,Speedo,1,,,VERIFIED
+ST0069,Pindi Stop,Lahore,Electro|Speedo,3,,,VERIFIED
+ST0070,Peco Morr,Lahore,Speedo,2,,,VERIFIED
+ST0071,Kot Lakhpat Railway Station,Lahore,Speedo,1,,,VERIFIED
+ST0072,Phatak Mandi,Lahore,Speedo,2,,,VERIFIED
+ST0073,Doctor Hospital,Lahore,Speedo,1,,,VERIFIED
+ST0074,Wafaqi Colony,Lahore,Speedo,1,,,VERIFIED
+ST0075,IBA Stop,Lahore,Electro|Speedo,2,,,VERIFIED
+ST0076,Hailey College,Lahore,Electro|Speedo,2,,,VERIFIED
+ST0077,Campus Pull,Lahore,Speedo,2,,,VERIFIED
+ST0078,Barkat Market,Lahore,Speedo,2,,,VERIFIED
+ST0079,Qaddafi Stadium,Lahore,Speedo,1,,,VERIFIED
+ST0080,Haji Camp,Lahore,Electro|Speedo,3,,,VERIFIED
+ST0081,Shimla Pahari,Lahore,Electro|Speedo,5,,,VERIFIED
+ST0082,Lahore Zoo,Lahore,Electro|Speedo,3,,,VERIFIED
+ST0083,Chairing Cross,Lahore,Speedo,2,,,VERIFIED
+ST0084,Ganga Ram Hospital,Lahore,Electro|Speedo,2,,,VERIFIED
+ST0085,Sham Nagar,Lahore,Speedo,1,,,VERIFIED
+ST0086,Multan Chungi,Lahore,Speedo,2,,,VERIFIED
+ST0087,Mustafa Town,Lahore,Speedo,1,,,VERIFIED
+ST0088,Karim Block Market,Lahore,Speedo,1,,,VERIFIED
+ST0089,PU Examination Center,Lahore,Speedo,1,,,VERIFIED
+ST0090,Bhekewal Morr,Lahore,Speedo,2,,,VERIFIED
+ST0091,Wahdat Colony,Lahore,Speedo,1,,,VERIFIED
+ST0092,Naqsha Stop,Lahore,Speedo,1,,,VERIFIED
+ST0093,Ichra,Lahore,Electro|Speedo,2,,,VERIFIED
+ST0094,Scheme Morr,Lahore,Speedo,1,,,VERIFIED
+ST0095,Flat Stop,Lahore,Speedo,1,,,VERIFIED
+ST0096,Dubai Chowk,Lahore,Speedo,1,,,VERIFIED
+ST0097,Sheikh Zaid Hospital,Lahore,Speedo,1,,,VERIFIED
+ST0098,Liberty Chowk,Lahore,Speedo,1,,,VERIFIED
+ST0099,Hafeez Center,Lahore,Speedo,1,,,VERIFIED
+ST0100,Mini Market,Lahore,Speedo,1,,,VERIFIED
+ST0101,Main Market Gulberg,Lahore,Speedo,1,,,VERIFIED
+ST0102,PAF Market,Lahore,Speedo,1,,,VERIFIED
+ST0103,Girja Chowk,Lahore,Speedo,1,,,VERIFIED
+ST0104,Afshan Chowk,Lahore,Speedo,1,,,VERIFIED
+ST0105,Fortress Stadium,Lahore,Speedo,1,,,VERIFIED
+ST0106,Gymkhana,Lahore,Speedo,1,,,VERIFIED
+ST0107,Aitchison College,Lahore,Speedo,1,,,VERIFIED
+ST0108,PC Hotel,Lahore,Speedo,1,,,VERIFIED
+ST0109,GPO,Lahore,Speedo,1,,,VERIFIED
+ST0110,Anarkali,Lahore,Speedo,1,,,VERIFIED
+ST0111,UMT Stop,Lahore,Speedo,1,,,VERIFIED
+ST0112,Khokhar Chowk,Lahore,Speedo,1,,,VERIFIED
+ST0113,Akbar Chowk,Lahore,Electro|Speedo,2,,,VERIFIED
+ST0114,Fauji Foundation,Lahore,Speedo,1,,,VERIFIED
+ST0115,Ali View Garden,Lahore,Speedo,1,,,VERIFIED
+ST0116,Bhatta Chowk,Lahore,Speedo,1,,,VERIFIED
+ST0117,DHA Nursery,Lahore,Speedo,1,,,VERIFIED
+ST0118,LESCO,Lahore,Speedo,1,,,VERIFIED
+ST0119,Chota Ishara Stop,Lahore,Speedo,1,,,VERIFIED
+ST0120,Naka Stop,Lahore,Speedo,1,,,VERIFIED
+ST0121,Hakeem M. Ajmal Khan Road,Lahore,Speedo,1,,,VERIFIED
+ST0122,Gulshan Ravi Road,Lahore,Speedo,1,,,VERIFIED
+ST0123,Kacha Ferozepur Road,Lahore,Speedo,1,,,VERIFIED
+ST0124,Circular Road,Lahore,Speedo,2,,,VERIFIED
+ST0125,Main Boulevard Shadman,Lahore,Speedo,1,,,VERIFIED
+ST0126,Davis Road,Lahore,Speedo,1,,,VERIFIED
+ST0127,Nisbat Road,Lahore,Speedo,1,,,VERIFIED
+ST0128,Abbot Road,Lahore,Speedo,1,,,VERIFIED
+ST0129,Main Market,Lahore,Speedo,1,,,VERIFIED
+ST0130,Jail Road,Lahore,Speedo,1,,,VERIFIED
+ST0131,Lytton Road,Lahore,Speedo,1,,,VERIFIED
+ST0132,Crust Road,Lahore,Speedo,1,,,VERIFIED
+ST0133,Lower Mall Road,Lahore,Speedo,1,,,VERIFIED
+ST0134,Jain Mandar,Lahore,Speedo,1,,,VERIFIED
+ST0135,Al-Mumtaz Road,Lahore,Speedo,1,,,VERIFIED
+ST0136,Poonch Road,Lahore,Speedo,1,,,VERIFIED
+ST0137,Lake Road,Lahore,Speedo,1,,,VERIFIED
+ST0138,Madar-e-Millat Road,Lahore,Speedo,2,,,VERIFIED
+ST0139,Ali Road,Lahore,Speedo,1,,,VERIFIED
+ST0140,Baig Road,Lahore,Speedo,1,,,VERIFIED
+ST0141,Canal Bank Road,Lahore,Speedo,1,,,VERIFIED
+ST0142,Thokar Niaz Baig,Lahore,Speedo,3,,,VERIFIED
+ST0143,Sutlej Avenue,Lahore,Speedo,1,,,VERIFIED
+ST0144,Shahrah Nazaria-e-Pakistan Avenue,Lahore,Speedo,1,,,VERIFIED
+ST0145,Valencia,Lahore,Speedo,1,,,VERIFIED
+ST0146,Valencia Main Boulevard,Lahore,Speedo,1,,,VERIFIED
+ST0147,Khayaban-e-Jinnah,Lahore,Speedo,1,,,VERIFIED
+ST0148,Raiwind Road,Lahore,Speedo,1,,,VERIFIED
+ST0149,College Road,Lahore,Speedo,1,,,VERIFIED
+ST0150,Maulana Shaukat Ali Road,Lahore,Speedo,1,,,VERIFIED
+ST0151,Wahdat Road,Lahore,Speedo,1,,,VERIFIED
+ST0152,Lahore-Bedian Road,Lahore,Speedo,1,,,VERIFIED
+ST0153,Allama Iqbal Road,Lahore,Speedo,1,,,VERIFIED
+ST0154,G.T. Road,Lahore,Speedo,2,,,VERIFIED
+ST0155,Shalimar Link Road,Lahore,Speedo,2,,,VERIFIED
+ST0156,Tufail Road,Lahore,Speedo,1,,,VERIFIED
+ST0157,Sarfraz Rafique Road,Lahore,Speedo,1,,,VERIFIED
+ST0158,Daroghawala,Lahore,Speedo,4,,,VERIFIED
+ST0159,BataPur,Lahore,Speedo,1,,,VERIFIED
+ST0160,GT Road,Lahore,Speedo,1,,,VERIFIED
+ST0161,Quaid-e-Azam Interchange,Lahore,Speedo,1,,,VERIFIED
+ST0162,Harbanspura Road,Lahore,Speedo,1,,,VERIFIED
+ST0163,Zarar Shaheed Road,Lahore,Speedo,1,,,VERIFIED
+ST0164,Airport,Lahore,Speedo,2,,,VERIFIED
+ST0165,Niazi Interchange,Lahore,Speedo,1,,,VERIFIED
+ST0166,Lahore Ring Road,Lahore,Speedo,1,,,VERIFIED
+ST0167,Band Road,Lahore,Speedo,1,,,VERIFIED
+ST0168,Sue Wala Road,Lahore,Speedo,1,,,VERIFIED
+ST0169,Salamat Pura,Lahore,Speedo,1,,,VERIFIED
+ST0170,Chamra Mandi,Lahore,Speedo,2,,,VERIFIED
+ST0171,Cooper Store,Lahore,Speedo,3,,,VERIFIED
+ST0172,UET,Lahore,Speedo,1,,,VERIFIED
+ST0173,Shalimar Chowk,Lahore,Speedo,1,,,VERIFIED
+ST0174,Durand Road,Lahore,Speedo,1,,,VERIFIED
+ST0175,Queen Mary Road,Lahore,Speedo,1,,,VERIFIED
+ST0176,Garhi Shahu Bridge,Lahore,Speedo,1,,,VERIFIED
+ST0177,Workshop Road,Lahore,Speedo,1,,,VERIFIED
+ST0178,Mughalpura Road,Lahore,Speedo,1,,,VERIFIED
+ST0179,Mughalpura,Lahore,Speedo,2,,,VERIFIED
+ST0180,Singhpura,Lahore,Speedo,1,,,VERIFIED
+ST0181,Wheatman Road,Lahore,Speedo,1,,,VERIFIED
+ST0182,Griffin Road,Lahore,Speedo,1,,,VERIFIED
+ST0183,Lahore Railway Station,Lahore,Electro,1,,,VERIFIED
+ST0184,Police Lines,Lahore,Electro,1,,,VERIFIED
+ST0185,Roznama Jang,Lahore,Electro,1,,,VERIFIED
+ST0186,Muslim League House,Lahore,Electro,1,,,VERIFIED
+ST0187,Club Chowk,Lahore,Electro,1,,,VERIFIED
+ST0188,Governor House,Lahore,Electro,1,,,VERIFIED
+ST0189,Bagh-e-Jinnah,Lahore,Electro,1,,,VERIFIED
+ST0190,Charing Cross,Lahore,Electro,1,,,VERIFIED
+ST0191,Waris Road,Lahore,Electro,1,,,VERIFIED
+ST0192,Abid Market,Lahore,Electro,1,,,VERIFIED
+ST0193,Mozang,Lahore,Electro,1,,,VERIFIED
+ST0194,Fazlia Colony,Lahore,Electro,1,,,VERIFIED
+ST0195,Rehmanpura,Lahore,Electro,1,,,VERIFIED
+ST0196,Ichra Bridge,Lahore,Electro,1,,,VERIFIED
+ST0197,Punjab College,Lahore,Electro,1,,,VERIFIED
+ST0198,New Garden Town,Lahore,Electro,1,,,VERIFIED
+ST0199,Campus Bridge,Lahore,Electro,1,,,VERIFIED
+ST0200,Punjab University Gate No. 4,Lahore,Electro,1,,,VERIFIED
+ST0201,Shah Di Khoi,Lahore,Electro,1,,,VERIFIED
+ST0202,Ravi Chowk,Lahore,Electro,1,,,VERIFIED
+ST0203,Shook Chowk,Lahore,Electro,1,,,VERIFIED
+ST0204,Township Bazaar,Lahore,Electro,1,,,VERIFIED
+ST0205,Mochipora,Lahore,Electro,1,,,VERIFIED
+ST0206,Model Town Link Road,Lahore,Electro,1,,,VERIFIED
+ST0207,Honda Morr,Lahore,Electro,1,,,VERIFIED
+ST0208,Government Employees Society,Lahore,Electro,1,,,VERIFIED
+ST0209,Riphah University,Lahore,Electro,1,,,VERIFIED
+ST0210,Nursery Stop,Lahore,Electro,1,,,VERIFIED
+ST0211,Green Town,Lahore,Electro,1,,,VERIFIED
+ST0212,Raiwind,Lahore,Electro,1,,,PARTIAL
+ST0213,Jinnah Terminal (Thokar Niaz Baig),Lahore,Electro,2,,,PARTIAL
+ST0214,Harbanspura,Lahore,Electro,1,,,PARTIAL

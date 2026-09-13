@@ -552,13 +552,13 @@ button[kind="primary"]:hover {
 }
 .leg-badge {
     background-color: var(--navy);
-    color: white;
+    color: white !important;
     padding: 4px 12px;
     border-radius: 999px;
     font-size: 13.5px;
     font-weight: 700;
 }
-.leg-arrow { color: var(--border); font-size: 18px; }
+.leg-arrow { color: var(--border) !important; font-size: 18px; }
 .change-row {
     color: var(--accent);
     font-weight: 700;
@@ -629,9 +629,14 @@ button[kind="primary"]:hover {
 /* ---------------- NATIVE STREAMLIT WIDGETS ----------------
    These don't use our custom classes, so they need their own
    dark-mode-aware overrides or they'd stay stuck in light mode
-   text/backgrounds no matter what the rest of the page does. */
+   text/backgrounds no matter what the rest of the page does.
+   Scoped to Streamlit's own text wrappers (via data-testid) rather
+   than bare "span"/"p"/"label" — a bare-tag rule would otherwise
+   beat our own custom classes like .leg-badge on specificity and
+   silently override their intended color (that's what caused the
+   invisible bus-number text bug). */
 
-.stApp p, .stApp span, .stApp label, .stMarkdown, .stCaption, [data-testid="stCaptionContainer"] {
+[data-testid="stMarkdownContainer"] > p, [data-testid="stCaptionContainer"] {
     color: var(--text-primary);
 }
 

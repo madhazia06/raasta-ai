@@ -182,6 +182,7 @@ defaults = {
     "show_results": False,
     "alerts_on": False,
     "listening": False,
+    "dark_mode": False,
 }
 for key, value in defaults.items():
     if key not in st.session_state:
@@ -241,6 +242,47 @@ def submit_search():
     st.session_state["show_results"] = True
 
 
+def toggle_dark_mode():
+    st.session_state["dark_mode"] = not st.session_state["dark_mode"]
+
+
+# ==================================================
+# THEME (light / dark)
+# ==================================================
+
+LIGHT_PALETTE = {
+    "bg": "#FFF8F0", "surface": "#FFFFFF", "surface-alt": "#E8E0D8",
+    "surface-selected": "#FFF0EC", "border": "#DED4CA",
+    "text-primary": "#18243A", "text-secondary": "#6B6F76", "text-muted": "#8A8D94",
+    "navy": "#18243A", "navy-subtext": "#B9C2D4",
+    "accent": "#FF7058", "accent-hover": "#F45F48",
+    "mint": "#BFE8D0", "info-bg": "#E8F4FA", "input-bg": "#FFF8F0",
+    "placeholder": "#9A9488", "ai-text": "#37414F", "leg-badge-text": "#FFFFFF",
+}
+
+DARK_PALETTE = {
+    "bg": "#10141C", "surface": "#1B212E", "surface-alt": "#232B3B",
+    "surface-selected": "#3A2A22", "border": "#333D52",
+    "text-primary": "#F2F3F6", "text-secondary": "#A6AEC2", "text-muted": "#7C859A",
+    "navy": "#0E1420", "navy-subtext": "#8C96AE",
+    "accent": "#FF7058", "accent-hover": "#FF8266",
+    "mint": "#2F6B52", "info-bg": "#1E2A3B", "input-bg": "#232B3B",
+    "placeholder": "#6B7488", "ai-text": "#C9D0DE", "leg-badge-text": "#FFFFFF",
+}
+
+
+def apply_theme():
+    """Injects the active palette as CSS custom properties. The main stylesheet
+    below references these via var(--name) instead of hardcoded hex codes, so
+    toggling dark mode just swaps these values — nothing else needs to change."""
+    palette = DARK_PALETTE if st.session_state["dark_mode"] else LIGHT_PALETTE
+    root_vars = "\n".join(f"    --{k}: {v};" for k, v in palette.items())
+    st.markdown(f"<style>:root {{\n{root_vars}\n}}</style>", unsafe_allow_html=True)
+
+
+apply_theme()
+
+
 # ==================================================
 # CSS
 # ==================================================
@@ -258,7 +300,7 @@ h1, h2, h3, .heading {
     font-family: 'Fredoka', sans-serif !important;
 }
 
-.stApp { background-color: #FFF8F0; }
+.stApp { background-color: var(--bg); }
 
 .block-container {
     padding-top: 1.4rem;
@@ -272,20 +314,20 @@ h1, h2, h3, .heading {
     font-family: 'Fredoka', sans-serif;
     font-size: 25px;
     font-weight: 700;
-    color: #18243A;
+    color: var(--text-primary);
     white-space: nowrap;
 }
-.logo span { color: #FF7058; }
+.logo span { color: var(--accent); }
 
 .nav-link {
     font-size: 14px;
-    color: #6B6F76;
+    color: var(--text-secondary);
     font-weight: 600;
     white-space: nowrap;
 }
 
 .navbar-divider {
-    border-bottom: 1px solid #DED4CA;
+    border-bottom: 1px solid var(--border);
     margin: 14px 0 22px 0;
 }
 
@@ -294,15 +336,15 @@ div[data-testid="stSelectbox"] {
 }
 div[data-testid="stSelectbox"] > div > div {
     border-radius: 10px !important;
-    border: 1.5px solid #DED4CA !important;
+    border: 1.5px solid var(--border) !important;
 }
 
 /* ---------------- HERO ---------------- */
 
 .hero-label {
     display: inline-block;
-    background-color: #BFE8D0;
-    color: #18243A;
+    background-color: var(--mint);
+    color: var(--text-primary);
     font-size: 12.5px;
     font-weight: 700;
     letter-spacing: 0.6px;
@@ -316,27 +358,27 @@ div[data-testid="stSelectbox"] > div > div {
     font-size: 46px;
     line-height: 1.12;
     font-weight: 700;
-    color: #18243A;
+    color: var(--text-primary);
     margin-bottom: 14px;
 }
-.hero-title span { color: #FF7058; }
+.hero-title span { color: var(--accent); }
 
 .hero-text {
     font-size: 16.5px;
     line-height: 1.6;
-    color: #6B6F76;
+    color: var(--text-secondary);
     max-width: 460px;
     margin-bottom: 14px;
 }
 
 .trust-line {
     font-size: 13.5px;
-    color: #6B6F76;
+    color: var(--text-secondary);
     font-weight: 600;
 }
 
 .bus-illustration {
-    background-color: #BFE8D0;
+    background-color: var(--mint);
     border-radius: 32px;
     min-height: 220px;
     display: flex;
@@ -344,7 +386,7 @@ div[data-testid="stSelectbox"] > div > div {
     justify-content: center;
     font-size: 84px;
     animation: float 3.5s ease-in-out infinite;
-    border: 3px solid #FFFFFF;
+    border: 3px solid var(--surface);
 }
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
@@ -354,7 +396,7 @@ div[data-testid="stSelectbox"] > div > div {
 /* ---------------- SEARCH PANEL ---------------- */
 
 .search-panel {
-    background-color: #18243A;
+    background-color: var(--navy);
     border-radius: 26px;
     padding: 28px 30px;
     margin-top: 22px;
@@ -370,35 +412,35 @@ div[data-testid="stSelectbox"] > div > div {
 }
 
 .search-subtitle {
-    color: #B9C2D4;
+    color: var(--navy-subtext);
     font-size: 14px;
     margin-bottom: 18px;
 }
 
 .stTextInput label {
-    color: #18243A !important;
+    color: var(--text-primary) !important;
     font-weight: 700 !important;
     font-size: 13px !important;
 }
 
 .stTextInput input {
     border-radius: 14px !important;
-    border: 1.5px solid #DED4CA !important;
+    border: 1.5px solid var(--border) !important;
     padding: 13px 14px !important;
-    background-color: #FFF8F0 !important;
-    color: #18243A !important;
+    background-color: var(--input-bg) !important;
+    color: var(--text-primary) !important;
     font-weight: 600 !important;
 }
 .stTextInput input:focus {
-    border: 1.5px solid #FF7058 !important;
+    border: 1.5px solid var(--accent) !important;
     box-shadow: 0 0 0 3px rgba(255, 112, 88, 0.18) !important;
 }
-.stTextInput input::placeholder { color: #9A9488 !important; }
+.stTextInput input::placeholder { color: var(--placeholder) !important; }
 
 /* Real bordered container that wraps the search form fields */
 div[data-testid="stVerticalBlockBorderWrapper"]:has(.search-form-marker) {
-    background-color: #FFFFFF;
-    border: 1.5px solid #DED4CA !important;
+    background-color: var(--surface);
+    border: 1.5px solid var(--border) !important;
     border-radius: 22px !important;
     padding: 22px 26px !important;
     margin-top: -6px;
@@ -417,34 +459,34 @@ div[data-testid="stVerticalBlockBorderWrapper"]:has(.search-form-marker) {
 
 /* Primary CTA — coral */
 button[kind="primary"] {
-    background-color: #FF7058 !important;
+    background-color: var(--accent) !important;
     color: white !important;
     height: 48px;
     font-size: 15.5px;
     border: none !important;
 }
 button[kind="primary"]:hover {
-    background-color: #F45F48 !important;
+    background-color: var(--accent-hover) !important;
     color: white !important;
     border: none !important;
 }
 
 /* Secondary/icon buttons (swap, mic, chips, alerts) default styling */
 .stButton > button {
-    background-color: #FFFFFF;
-    color: #18243A;
-    border: 1.5px solid #DED4CA;
+    background-color: var(--surface);
+    color: var(--text-primary);
+    border: 1.5px solid var(--border);
     height: 44px;
 }
 .stButton > button:hover {
-    border: 1.5px solid #FF7058;
-    color: #FF7058;
+    border: 1.5px solid var(--accent);
+    color: var(--accent);
 }
 
 /* ---------------- PREFERENCE CARDS ---------------- */
 
 .pref-card {
-    background-color: #E8E0D8;
+    background-color: var(--surface-alt);
     border-radius: 18px;
     padding: 16px 14px;
     min-height: 110px;
@@ -452,23 +494,23 @@ button[kind="primary"]:hover {
     transition: all 0.15s ease-in-out;
 }
 .pref-card.selected {
-    border: 2.5px solid #FF7058;
-    background-color: #FFF0EC;
+    border: 2.5px solid var(--accent);
+    background-color: var(--surface-selected);
 }
 .pref-icon { font-size: 24px; margin-bottom: 6px; }
 .pref-name {
     font-family: 'Fredoka', sans-serif;
-    color: #18243A;
+    color: var(--text-primary);
     font-size: 16.5px;
     font-weight: 600;
     margin-bottom: 2px;
 }
-.pref-desc { color: #6B6F76; font-size: 12.5px; line-height: 1.35; }
+.pref-desc { color: var(--text-secondary); font-size: 12.5px; line-height: 1.35; }
 
 /* ---------------- MISSED-STOP CARD ---------------- */
 
 .alert-card {
-    background-color: #E8F4FA;
+    background-color: var(--info-bg);
     border-radius: 18px;
     padding: 18px 20px;
     margin-top: 20px;
@@ -478,7 +520,7 @@ button[kind="primary"]:hover {
     flex-wrap: wrap;
     gap: 10px;
 }
-.alert-text { font-size: 14.5px; color: #18243A; font-weight: 600; }
+.alert-text { font-size: 14.5px; color: var(--text-primary); font-weight: 600; }
 
 /* ---------------- ROUTE RESULTS ---------------- */
 
@@ -486,14 +528,14 @@ button[kind="primary"]:hover {
     font-family: 'Fredoka', sans-serif;
     font-size: 26px;
     font-weight: 600;
-    color: #18243A;
+    color: var(--text-primary);
     margin: 6px 0 2px 0;
 }
-.route-sub { color: #6B6F76; font-size: 14.5px; margin-bottom: 16px; }
+.route-sub { color: var(--text-secondary); font-size: 14.5px; margin-bottom: 16px; }
 
 .route-card {
-    background-color: #FFFFFF;
-    border: 1.5px solid #DED4CA;
+    background-color: var(--surface);
+    border: 1.5px solid var(--border);
     border-radius: 20px;
     padding: 22px;
     margin-bottom: 14px;
@@ -505,20 +547,20 @@ button[kind="primary"]:hover {
     gap: 10px;
     padding: 8px 0;
     font-size: 15px;
-    color: #18243A;
+    color: var(--text-primary);
     font-weight: 600;
 }
 .leg-badge {
-    background-color: #18243A;
+    background-color: var(--navy);
     color: white;
     padding: 4px 12px;
     border-radius: 999px;
     font-size: 13.5px;
     font-weight: 700;
 }
-.leg-arrow { color: #DED4CA; font-size: 18px; }
+.leg-arrow { color: var(--border); font-size: 18px; }
 .change-row {
-    color: #FF7058;
+    color: var(--accent);
     font-weight: 700;
     font-size: 13.5px;
     padding: 4px 0 4px 6px;
@@ -526,8 +568,8 @@ button[kind="primary"]:hover {
 
 .stat-pill {
     display: inline-block;
-    background-color: #E8F4FA;
-    color: #18243A;
+    background-color: var(--info-bg);
+    color: var(--text-primary);
     font-weight: 700;
     border-radius: 999px;
     padding: 6px 14px;
@@ -537,7 +579,7 @@ button[kind="primary"]:hover {
 }
 
 .ai-box {
-    background-color: #E8F4FA;
+    background-color: var(--info-bg);
     border-radius: 16px;
     padding: 16px 18px;
     margin-top: 6px;
@@ -545,30 +587,30 @@ button[kind="primary"]:hover {
 .ai-label {
     font-family: 'Fredoka', sans-serif;
     font-weight: 600;
-    color: #18243A;
+    color: var(--text-primary);
     font-size: 14.5px;
     margin-bottom: 4px;
 }
-.ai-text { color: #37414F; font-size: 14px; line-height: 1.5; }
+.ai-text { color: var(--ai-text); font-size: 14px; line-height: 1.5; }
 
 .alt-card {
-    background-color: #FFFFFF;
-    border: 2px solid #DED4CA;
+    background-color: var(--surface);
+    border: 2px solid var(--border);
     border-radius: 16px;
     padding: 14px 16px;
     transition: all 0.12s ease-in-out;
 }
 .alt-card.active {
-    border: 2px solid #FF7058;
-    background-color: #FFF0EC;
+    border: 2px solid var(--accent);
+    background-color: var(--surface-selected);
 }
-.alt-name { font-weight: 700; color: #18243A; font-size: 15px; }
-.alt-stats { color: #6B6F76; font-size: 12.5px; margin-top: 3px; }
+.alt-name { font-weight: 700; color: var(--text-primary); font-size: 15px; }
+.alt-stats { color: var(--text-secondary); font-size: 12.5px; margin-top: 3px; }
 
 /* ---------------- CHIPS ---------------- */
 
 .chip-label {
-    color: #18243A;
+    color: var(--text-primary);
     font-weight: 700;
     font-size: 15px;
     margin: 18px 0 8px 0;
@@ -578,10 +620,39 @@ button[kind="primary"]:hover {
 
 .footer {
     text-align: center;
-    color: #8A8D94;
+    color: var(--text-muted);
     font-size: 13px;
     padding-top: 26px;
     padding-bottom: 10px;
+}
+
+/* ---------------- NATIVE STREAMLIT WIDGETS ----------------
+   These don't use our custom classes, so they need their own
+   dark-mode-aware overrides or they'd stay stuck in light mode
+   text/backgrounds no matter what the rest of the page does. */
+
+.stApp p, .stApp span, .stApp label, .stMarkdown, .stCaption, [data-testid="stCaptionContainer"] {
+    color: var(--text-primary);
+}
+
+div[data-testid="stSelectbox"] > div > div {
+    background-color: var(--surface) !important;
+    color: var(--text-primary) !important;
+}
+
+[data-testid="stExpander"] {
+    background-color: var(--surface);
+    border: 1px solid var(--border) !important;
+    border-radius: 14px !important;
+}
+[data-testid="stExpander"] summary, [data-testid="stExpander"] p {
+    color: var(--text-primary) !important;
+}
+
+div[data-testid="stAlert"] {
+    background-color: var(--info-bg);
+    color: var(--text-primary);
+    border-radius: 12px;
 }
 
 </style>
@@ -593,7 +664,7 @@ button[kind="primary"]:hover {
 # ==================================================
 
 def show_navbar():
-    col1, col2, col3, col4 = st.columns([3, 0.9, 0.6, 1], vertical_alignment="center")
+    col1, col2, col3, col4, col5 = st.columns([2.6, 0.9, 0.6, 0.5, 1], vertical_alignment="center")
     with col1:
         st.markdown('<div class="logo">🚌 RAASTA<span>.</span></div>', unsafe_allow_html=True)
     with col2:
@@ -601,6 +672,13 @@ def show_navbar():
     with col3:
         st.markdown('<div class="nav-link">About</div>', unsafe_allow_html=True)
     with col4:
+        is_dark = st.session_state["dark_mode"]
+        st.button(
+            "☀️" if is_dark else "🌙",
+            key="theme_toggle_btn", on_click=toggle_dark_mode,
+            help="Switch to light mode" if is_dark else "Switch to dark mode"
+        )
+    with col5:
         st.selectbox(
             "Language", ["English", "اردو"],
             key="language", label_visibility="collapsed"
@@ -685,7 +763,7 @@ def show_quick_destinations():
 
 
 def show_preferences():
-    st.markdown('<div class="chip-label" style="margin-top:24px;">What matters most to you? <span style="font-weight:400; color:#6B6F76; font-size:12.5px;">(pick as many as you like)</span></div>', unsafe_allow_html=True)
+    st.markdown('<div class="chip-label" style="margin-top:24px;">What matters most to you? <span style="font-weight:400; color:var(--text-secondary); font-size:12.5px;">(pick as many as you like)</span></div>', unsafe_allow_html=True)
     cols = st.columns(4, gap="medium")
     for col, name in zip(cols, PREFERENCE_META.keys()):
         meta = PREFERENCE_META[name]
@@ -711,7 +789,7 @@ def show_missed_stop_card():
         st.markdown(html_block(f"""
         <div class="alert-card">
             <div class="alert-text">🔔 <b>Don't miss your stop</b><br>
-            <span style="font-weight:400; color:#6B6F76;">Get notified before your stop arrives.</span></div>
+            <span style="font-weight:400; color:var(--text-secondary);">Get notified before your stop arrives.</span></div>
         </div>
         """), unsafe_allow_html=True)
     with col2:
@@ -723,10 +801,10 @@ def show_error_state(kind: str):
     if kind == "no_route":
         st.markdown(html_block("""
         <div class="route-card" style="text-align:center;">
-            <div class="heading" style="font-size:19px; font-weight:600; color:#18243A;">
+            <div class="heading" style="font-size:19px; font-weight:600; color:var(--text-primary);">
                 🚌 Hmm, we couldn't find a route yet.
             </div>
-            <div style="color:#6B6F76; margin-top:6px;">Try another nearby stop or destination.</div>
+            <div style="color:var(--text-secondary); margin-top:6px;">Try another nearby stop or destination.</div>
         </div>
         """), unsafe_allow_html=True)
         st.button("Try again", key="try_again_btn", on_click=go_back_home)
@@ -765,7 +843,7 @@ def show_route_results():
 
     st.markdown(html_block(f"""
     <div class="route-card">
-        <div style="font-family:'Fredoka',sans-serif; font-weight:600; font-size:17px; color:#18243A; margin-bottom:8px;">
+        <div style="font-family:'Fredoka',sans-serif; font-weight:600; font-size:17px; color:var(--text-primary); margin-bottom:8px;">
             RECOMMENDED ROUTE
         </div>
         {legs_html}
@@ -789,7 +867,7 @@ def show_route_results():
     # ---- step-by-step (language aware) ----
     with st.expander("📋 Step-by-step instructions"):
         for step in steps:
-            st.markdown(f"<div style='padding:5px 0; font-size:14.5px; color:#18243A;'>{step}</div>", unsafe_allow_html=True)
+            st.markdown(f"<div style='padding:5px 0; font-size:14.5px; color:var(--text-primary);'>{step}</div>", unsafe_allow_html=True)
         st.button("🔊 Play voice guidance", key="voice_guidance_btn")
 
     show_alternatives()
@@ -798,7 +876,7 @@ def show_route_results():
 
 
 def show_alternatives():
-    st.markdown('<div class="chip-label">Adjust your priorities <span style="font-weight:400; color:#6B6F76; font-size:12.5px;">(pick as many as you like)</span></div>', unsafe_allow_html=True)
+    st.markdown('<div class="chip-label">Adjust your priorities <span style="font-weight:400; color:var(--text-secondary); font-size:12.5px;">(pick as many as you like)</span></div>', unsafe_allow_html=True)
     cols = st.columns(4, gap="medium")
     for col, name in zip(cols, PREFERENCE_META.keys()):
         meta = PREFERENCE_META[name]

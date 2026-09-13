@@ -1,7 +1,0 @@
-streamlit
-numpy
-sentence-transformers
-faiss-cpu
-pandas
-folium
-streamlit-folium

@@ -9,6 +9,140 @@ else in the UI is written to keep working once real data is plugged in.
 
 import streamlit as st
 import re
+import os
+import sys
+
+# --------------------------------------------------------------------
+# ROUTING ENGINE INTEGRATION (Member 3's real files, in routing/ + data/)
+# --------------------------------------------------------------------
+# routing/graph.py and routing/ranking.py import each other as top-level
+# modules (e.g. `from route_engine import find_route`), the same way you'd
+# run them with `cd routing && python demo.py`. Since app.py lives one
+# level up, we add routing/ to sys.path so those internal imports resolve
+# the same way here as they do when the routing/ scripts run standalone.
+_THIS_DIR = os.path.dirname(os.path.abspath(__file__))
+_ROUTING_DIR = os.path.join(_THIS_DIR, "routing")
+if _ROUTING_DIR not in sys.path:
+    sys.path.insert(0, _ROUTING_DIR)
+
+from graph import TransportGraph
+from ranking import get_ranked_routes_by_name
+
+_DATA_DIR = os.path.join(_THIS_DIR, "data")
+_STOPS_CSV = os.path.join(_DATA_DIR, "stops.csv")
+_ROUTES_CSV = os.path.join(_DATA_DIR, "routes.csv")
+_ROUTE_STOPS_CSV = os.path.join(_DATA_DIR, "route_stops.csv")
+_FARES_CSV = os.path.join(_DATA_DIR, "fares.csv")
+
+
+@st.cache_resource
+def _get_graph():
+    """Build the transport graph once and reuse it across reruns — Streamlit
+    reruns the whole script on every click, so this avoids rebuilding the
+    graph from CSV every single time."""
+    return TransportGraph().build(
+        stops_csv_path=_STOPS_CSV,
+        routes_csv_path=_ROUTES_CSV,
+        route_stops_csv_path=_ROUTE_STOPS_CSV,
+        fares_csv_path=_FARES_CSV,
+    )
+
+
+def is_known_place(place: str) -> bool:
+    """Used for the 'Destination not recognized' error state."""
+    return _get_graph().find_stop_by_name(place) is not None
+
+
+# Maps our UI's preference names to the labels routing/ranking.py produces.
+_PREFERENCE_TO_LABEL = {
+    "Fastest": "Fastest",
+    "Walk less": "Least Walking",
+    "Fewer changes": "Fewest Bus Changes",
+    "Less fare": "Cheapest",
+}
+
+# IMPORTANT LIMITATION: the real engine computes ONE best route per SINGLE
+# category (Fastest / Cheapest / Fewest Bus Changes / Least Walking) — it
+# cannot jointly optimize several criteria at once (e.g. there's no single
+# route guaranteed to be simultaneously cheapest AND fewest-change). Since
+# our UI lets the user multi-select preferences, when more than one is
+# picked we fall back to a fixed PRIORITY ORDER and use whichever selected
+# preference ranks highest in it. This is a reasonable approximation for
+# a prototype, but flag it to the team — a true multi-criteria optimizer
+# is a bigger feature than this timeline allows.
+_PREFERENCE_PRIORITY = ["Fewer changes", "Less fare", "Walk less", "Fastest"]
+
+
+def _steps_to_legs(steps):
+    """Converts the routing engine's plain-language steps into the
+    {bus, board, alight} leg dicts our route card renders."""
+    legs = []
+    current_bus = None
+    current_board = None
+    for step in steps:
+        text = step["instruction"]
+        if step["type"] == "board":
+            try:
+                bus_part, board_part = text.replace("Board ", "", 1).split(" at ")
+                current_bus = bus_part.strip()
+                current_board = board_part.rstrip(".").strip()
+            except ValueError:
+                current_bus, current_board = text, ""
+        elif step["type"] == "ride" and current_bus is not None:
+            alight_part = text.split("Get off at ", 1)[-1].split(" (")[0].strip()
+            legs.append({"bus": current_bus, "board": current_board, "alight": alight_part})
+            current_bus = None
+    return legs
+
+
+_WHY_TEXT = {
+    "Fastest": "gets you there quickest",
+    "Least Walking": "keeps walking to a minimum",
+    "Fewest Bus Changes": "needs no unnecessary bus changes",
+    "Cheapest": "keeps the fare as low as possible",
+}
+
+
+def get_real_route(start: str, destination: str, selected_preferences: set):
+    """
+    Calls the real routing engine (routing/) and returns the same dict
+    shape the UI already expects: {time, walk, fare, changes, legs, why}.
+    Returns None if no route could be found.
+    """
+    graph = _get_graph()
+    ranked = get_ranked_routes_by_name(graph, start, destination)
+
+    if isinstance(ranked, dict) and "error" in ranked:
+        return None
+    if not ranked:
+        return None
+
+    # Pick which single category governs this search (see _PREFERENCE_PRIORITY
+    # note above for why we can't jointly satisfy multiple selections).
+    wanted_label = "Fastest"
+    for pref_name in _PREFERENCE_PRIORITY:
+        if pref_name in selected_preferences:
+            wanted_label = _PREFERENCE_TO_LABEL[pref_name]
+            break
+
+    chosen = next((r for r in ranked if r["label"] == wanted_label), ranked[0])
+    route = chosen["route"]
+
+    legs = _steps_to_legs(route["steps"])
+    if not legs:
+        return None
+
+    actual_label = chosen["label"]
+    why = f"RAASTA chose this route because it {_WHY_TEXT.get(actual_label, 'is a solid overall option')}."
+
+    return {
+        "time": round(route["total_time_min"]),
+        "walk": round(route["total_walking_min"]),
+        "fare": round(route.get("total_fare_pkr", 0)),
+        "changes": route["transfers"],
+        "legs": legs,
+        "why": why,
+    }
 
 
 def html_block(text: str) -> str:
@@ -39,67 +173,23 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ==================================================
-# DUMMY DATA LAYER
-# (Member 3 replaces this with real transport data / route engine)
+# STATIC UI DATA
 # ==================================================
 
-KNOWN_PLACES = [
-    "shahdara", "liberty market", "mall road", "mayo hospital",
-    "pucit", "railway station", "model town", "gulberg", "canal road",
-]
-
 QUICK_DESTINATIONS = [
-    ("🏥", "Mayo Hospital"),
-    ("🎓", "PUCIT"),
-    ("🛍", "Liberty Market"),
     ("🚉", "Railway Station"),
-    ("🏙", "Mall Road"),
+    ("🛍", "Liberty Chowk"),
+    ("🏙", "Kalma Chowk"),
+    ("🏘", "Model Town"),
 ]
 
-# Base (unmodified) route between the demo stops.
-BASE_ROUTE = {
-    "time": 42,
-    "walk": 8,
-    "fare": 40,
-    "legs": [
-        {"bus": "Bus 21", "board": "Shahdara Stop", "alight": "Mall Road"},
-        {"bus": "Bus 12", "board": "Mall Road", "alight": "Liberty Market Stop"},
-    ],
-}
-
-# A single direct bus, used when "Fewer changes" is one of the selected preferences.
-DIRECT_LEGS = [
-    {"bus": "Bus 15", "board": "Shahdara Stop", "alight": "Liberty Market Stop"},
-]
-
-# Preferences are combinable — each one nudges the base route's stats rather than
-# replacing it outright, so any combination the user picks produces a sensible result.
-# (Member 3 replaces this whole scoring approach with a real route engine.)
+# Icons/descriptions only — the actual route math now comes from the real
+# routing engine (get_real_route below), not from these deltas.
 PREFERENCE_META = {
-    "Fastest": {
-        "icon": "⚡",
-        "desc": "Reach your destination sooner",
-        "time_delta": -8, "walk_delta": +2, "fare_delta": +5,
-        "why": "gets you there quicker",
-    },
-    "Walk less": {
-        "icon": "🚶",
-        "desc": "Choose routes with less walking",
-        "time_delta": +2, "walk_delta": -4, "fare_delta": 0,
-        "why": "keeps walking to a minimum",
-    },
-    "Fewer changes": {
-        "icon": "🔁",
-        "desc": "Avoid changing buses",
-        "time_delta": +10, "walk_delta": +2, "fare_delta": 0, "force_direct": True,
-        "why": "needs no bus changes at all",
-    },
-    "Less fare": {
-        "icon": "💰",
-        "desc": "Choose the cheapest option",
-        "time_delta": +6, "walk_delta": 0, "fare_delta": -15,
-        "why": "keeps the fare as low as possible",
-    },
+    "Fastest": {"icon": "⚡", "desc": "Reach your destination sooner"},
+    "Walk less": {"icon": "🚶", "desc": "Choose routes with less walking"},
+    "Fewer changes": {"icon": "🔁", "desc": "Avoid changing buses"},
+    "Less fare": {"icon": "💰", "desc": "Choose the cheapest option"},
 }
 
 URDU_STEP_TEMPLATES = {
@@ -107,48 +197,6 @@ URDU_STEP_TEMPLATES = {
     "change": "{stop} par utar kar {bus} lein.",
     "arrive": "Agla stop aapka hai — {stop} par utar jayein.",
 }
-
-
-def get_dummy_route(selected_preferences: set) -> dict:
-    """Stand-in for Member 3's real route engine.
-
-    Combines the base route with the deltas of every currently-selected
-    preference, so any combination (or none at all) produces a coherent result.
-    """
-    time = BASE_ROUTE["time"]
-    walk = BASE_ROUTE["walk"]
-    fare = BASE_ROUTE["fare"]
-    use_direct = False
-    reasons = []
-
-    for name in selected_preferences:
-        meta = PREFERENCE_META.get(name)
-        if not meta:
-            continue
-        time += meta["time_delta"]
-        walk += meta["walk_delta"]
-        fare += meta["fare_delta"]
-        if meta.get("force_direct"):
-            use_direct = True
-        reasons.append(meta["why"])
-
-    # keep numbers sane regardless of which deltas were combined
-    time = max(15, time)
-    walk = max(2, walk)
-    fare = max(15, fare)
-
-    legs = DIRECT_LEGS if use_direct else BASE_ROUTE["legs"]
-    changes = 0 if use_direct else len(legs) - 1
-
-    if reasons:
-        why = "RAASTA chose this route because it " + ", and ".join(reasons) + "."
-    else:
-        why = "RAASTA chose this as the most balanced overall route."
-
-    return {
-        "time": time, "walk": walk, "fare": fare,
-        "changes": changes, "legs": legs, "why": why,
-    }
 
 
 def build_route_steps(variant: dict, language: str) -> list:
@@ -823,9 +871,7 @@ def show_route_results():
     st.button("← Back", key="back_btn", on_click=go_back_home)
 
     # friendly "no route found" state for unrecognized places
-    known = start.lower() in KNOWN_PLACES or any(p in start.lower() for p in KNOWN_PLACES)
-    known_dest = destination.lower() in KNOWN_PLACES or any(p in destination.lower() for p in KNOWN_PLACES)
-    if not (known and known_dest):
+    if not (is_known_place(start) and is_known_place(destination)):
         st.markdown('<div class="route-header">Your route</div>', unsafe_allow_html=True)
         show_error_state("no_route")
         return
@@ -833,7 +879,10 @@ def show_route_results():
     st.markdown(f'<div class="route-header">Your route</div>', unsafe_allow_html=True)
     st.markdown(f'<div class="route-sub">{start} → {destination}</div>', unsafe_allow_html=True)
 
-    variant = get_dummy_route(st.session_state["preferences"])
+    variant = get_real_route(start, destination, st.session_state["preferences"])
+    if variant is None:
+        show_error_state("no_route")
+        return
     steps = build_route_steps(variant, language)
 
     # ---- recommended route card ----
@@ -875,30 +924,40 @@ def show_route_results():
             st.markdown(f"<div style='padding:5px 0; font-size:14.5px; color:var(--text-primary);'>{step}</div>", unsafe_allow_html=True)
         st.button("🔊 Play voice guidance", key="voice_guidance_btn")
 
-    show_alternatives()
+    show_alternatives(start, destination)
     st.write("")
     show_missed_stop_card()
 
 
-def show_alternatives():
+def show_alternatives(start: str, destination: str):
     st.markdown('<div class="chip-label">Adjust your priorities <span style="font-weight:400; color:var(--text-secondary); font-size:12.5px;">(pick as many as you like)</span></div>', unsafe_allow_html=True)
+
+    ranked = get_ranked_routes_by_name(_get_graph(), start, destination)
+    ranked_by_label = {}
+    if not (isinstance(ranked, dict) and "error" in ranked):
+        ranked_by_label = {r["label"]: r["route"] for r in ranked}
+
     cols = st.columns(4, gap="medium")
     for col, name in zip(cols, PREFERENCE_META.keys()):
         meta = PREFERENCE_META[name]
         active = name in st.session_state["preferences"]
-        delta_bits = []
-        if meta["time_delta"]:
-            delta_bits.append(f"{meta['time_delta']:+d} min")
-        if meta["walk_delta"]:
-            delta_bits.append(f"{meta['walk_delta']:+d} min walk")
-        if meta["fare_delta"]:
-            delta_bits.append(f"{meta['fare_delta']:+d} Rs")
-        delta_text = " · ".join(delta_bits) if delta_bits else "no change"
+        label = _PREFERENCE_TO_LABEL[name]
+        route = ranked_by_label.get(label)
+
+        if route:
+            stats_text = (
+                f"{round(route['total_time_min'])} min · "
+                f"Rs. {round(route.get('total_fare_pkr', 0))} · "
+                f"{route['transfers']} change{'s' if route['transfers'] != 1 else ''}"
+            )
+        else:
+            stats_text = "Not available for this route"
+
         with col:
             st.markdown(html_block(f"""
             <div class="alt-card {'active' if active else ''}">
                 <div class="alt-name">{meta['icon']} {name}</div>
-                <div class="alt-stats">{delta_text}</div>
+                <div class="alt-stats">{stats_text}</div>
             </div>
             """), unsafe_allow_html=True)
             st.button(
